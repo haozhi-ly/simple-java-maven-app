@@ -5,6 +5,19 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
+        stage('Example') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
+        }
         stage('Build') {
             steps {
                 withMaven(mavenSettingsConfig: '3ab10412-1b5c-4888-86d2-e53d3f0b3ac3') {
