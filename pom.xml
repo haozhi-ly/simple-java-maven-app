@@ -72,4 +72,16 @@
       </plugin>
     </plugins>
   </build>
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+    <!-- 也可加入私服或镜像 -->
+    <repository>
+      <id>tencent</id>
+      <url>https://mirrors.tencent.com/nexus/repository/maven-public/</url>
+    </repository>
+  </repositories>
+
 </project>
